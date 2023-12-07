@@ -1,4 +1,4 @@
-#Requires AutoHotkey v2.0
+﻿#Requires AutoHotkey v2.0
 #SingleInstance
 
 SetTitleMatchMode("RegEx")
@@ -13,18 +13,35 @@ CapsLock::WinActivate(godot_window)
 #HotIf WinActive(godot_window)
 CapsLock::WinActivate(vscode_window)
 
-; F5: from VSCode switch to Godot and "Run Project (F5)"
+; F5: - from VSCode switch to Godot and "Run Project (F5)"
+;     - save open .gd file first
 #HotIf WinActive(vscode_window)
 F5::
 {
+    vscode_save_current_file()
+
     WinActivate(godot_window)
     Send("{F5}")
 }
 
-; F6: from VSCode switch to Godot and "Run Current Scene (F6)
+; F6: - from VSCode switch to Godot and "Run Current Scene (F6)
+;     - save open .gd file first
 #HotIf WinActive(vscode_window)
 F6::
 {
+    vscode_save_current_file()
+
     WinActivate(godot_window)
     Send("{F6}")
+}
+
+; ---------------------------------------------------------------------------
+
+; VSCode: save current file (if needed) and wait for a short moment
+vscode_save_current_file()
+{
+    if WinActive("^● .+\.gd .* Visual Studio Code$") {
+        Send("^s")
+        Sleep(500)
+    }
 }
