@@ -9,9 +9,11 @@ godot_window := "Godot Engine ahk_exe Godot.*\.exe"
 ; CapsLock: toggle between VSCode and Godot
 #HotIf WinActive(vscode_window)
 CapsLock::WinActivate(godot_window)
+#HotIf
 
 #HotIf WinActive(godot_window)
 CapsLock::WinActivate(vscode_window)
+#HotIf
 
 ; F5: - from VSCode switch to Godot and "Run Project (F5)"
 ;     - save open .gd file first
@@ -23,6 +25,7 @@ F5::
     WinActivate(godot_window)
     Send("{F5}")
 }
+#HotIf
 
 ; F6: - from VSCode switch to Godot and "Run Current Scene (F6)
 ;     - save open .gd file first
@@ -34,6 +37,7 @@ F6::
     WinActivate(godot_window)
     Send("{F6}")
 }
+#HotIf
 
 ; ---------------------------------------------------------------------------
 
