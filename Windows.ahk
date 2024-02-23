@@ -8,11 +8,6 @@ SetTitleMatchMode("RegEx")
 #e::WinActivate
 #HotIf
 
-; Win+O: switch to Obsidian
-#HotIf WinExist("- Vault - Obsidian ahk_exe Obsidian\.exe ahk_class Chrome_WidgetWin_1")
-#o::WinActivate
-#HotIf
-
 ; disable Win+Space, Shift+Win+Space, Ctrl+Shift+Win+Space ("switch keyboard input methods")
   #Space::return
  +#Space::return
