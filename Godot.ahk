@@ -7,11 +7,11 @@ vscode_window := "Visual Studio Code ahk_exe Code\.exe"
 godot_window := "Godot Engine ahk_exe Godot.*\.exe"
 
 ; CapsLock: toggle between VSCode and Godot
-#HotIf WinActive(vscode_window)
+#HotIf WinActive(vscode_window) and WinExist(godot_window)
 CapsLock::WinActivate(godot_window)
 #HotIf
 
-#HotIf WinActive(godot_window)
+#HotIf WinActive(godot_window) and WinExist(vscode_window)
 CapsLock::WinActivate(vscode_window)
 #HotIf
 
