@@ -16,5 +16,7 @@ SetTitleMatchMode("RegEx")
 ; Win+Pause: enter sleep mode
 #Pause::DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
 
-; Win+V: open Ditto
-#v::Run("C:\Program Files\Ditto\Ditto.exe /Open")
+;       Win+V: Ditto, open clipboard menu
+; Shift+Win+V: Ditto, paste as plain text
+ #v::Run("C:\Program Files\Ditto\Ditto.exe /Open")
++#v::Run("C:\Program Files\Ditto\Ditto.exe /PlainTextPaste")
