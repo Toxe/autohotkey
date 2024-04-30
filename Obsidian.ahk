@@ -15,8 +15,8 @@ ctrl_k_chord_pressed := false
 
 set_ctrl_k_chord_pressed(pressed)
 {
-  global ctrl_k_chord_pressed
-  ctrl_k_chord_pressed := pressed
+    global ctrl_k_chord_pressed
+    ctrl_k_chord_pressed := pressed
 }
 
 #HotIf WinActive(obsidian_window) and !ctrl_k_chord_pressed
@@ -31,7 +31,7 @@ LCtrl UP::set_ctrl_k_chord_pressed(false)
 #HotIf WinActive(obsidian_window) and ctrl_k_chord_pressed
 ^D::
 {
-  Send("^!l")
-  set_ctrl_k_chord_pressed(false)
+    Send("^!l")
+    set_ctrl_k_chord_pressed(false)
 }
 #HotIf
