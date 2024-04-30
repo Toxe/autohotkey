@@ -1,4 +1,4 @@
-﻿#Requires AutoHotkey v2.0
+#Requires AutoHotkey v2.0
 #SingleInstance
 
 SetTitleMatchMode("RegEx")
@@ -16,7 +16,16 @@ SetTitleMatchMode("RegEx")
 ; Win+Pause: enter sleep mode
 #Pause::DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
 
-;       Win+V: Ditto, open clipboard menu
+; Win+V: Ditto, open clipboard menu
+#v::
+{
+    Run("C:\Program Files\Ditto\Ditto.exe /Open")
+
+    if WinWait("ahk_exe Ditto\.exe ahk_class QPasteClass", , 3)
+        WinActivate
+    else
+        MsgBox("Unable to show Ditto clipboard window.")
+}
+
 ; Shift+Win+V: Ditto, paste as plain text
- #v::Run("C:\Program Files\Ditto\Ditto.exe /Open")
 +#v::Run("C:\Program Files\Ditto\Ditto.exe /PlainTextPaste")
