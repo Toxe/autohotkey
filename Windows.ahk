@@ -29,3 +29,8 @@ SetTitleMatchMode("RegEx")
 
 ; Shift+Win+V: Ditto, paste as plain text
 +#v::Run("C:\Program Files\Ditto\Ditto.exe /PlainTextPaste")
+
+; ==== Mouse ==========================================================
+
+; remap Mouse Button 4 to Middle Mouse Button
+XButton1::MButton
