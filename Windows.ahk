@@ -34,3 +34,21 @@ SetTitleMatchMode("RegEx")
 
 ; remap Mouse Button 4 to Middle Mouse Button
 XButton1::MButton
+
+; ---- Alt+Tab menu ---------------------------------------------------
+
+; Mouse Button 5 opens the Alt+Tab menu and...
+#HotIf !WinActive("Task Switching ahk_exe explorer.exe")
+XButton2::Send("!^{Tab}")
+#HotIf
+
+; ...while Alt+Tab menu is open AND holding Mouse Button 5...
+#HotIf WinActive("Task Switching ahk_exe explorer.exe")
+; ...Mouse Wheel up/down selects previous/next program
+WheelUp::Send("{Left}")
+WheelDown::Send("{Right}")
+
+; ...pressing Left Mouse Button or releasing Mouse Button 5 switches to selected program
+LButton::Send("{Enter}")
+XButton2 up::Send("{Enter}")
+#HotIf
