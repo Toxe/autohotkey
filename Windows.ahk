@@ -16,6 +16,9 @@ SetTitleMatchMode("RegEx")
 ; Win+Pause: enter sleep mode
 #Pause::DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
 
+; Alt+Space: open Everything to search for and launch executables
+!Space::Run("C:\Program Files\Everything 1.5a\Everything64.exe -filter Executable")
+
 ; Win+V: Ditto, open clipboard menu
 #v::
 {
