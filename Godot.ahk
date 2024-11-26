@@ -17,7 +17,7 @@ CapsLock::WinActivate(vscode_window)
 
 ; F5: - from VSCode switch to Godot and "Run Project (F5)"
 ;     - save open .gd file first
-#HotIf WinActive(vscode_window)
+#HotIf WinActive(vscode_window) and WinExist(godot_window)
 F5::
 {
     vscode_save_current_file()
@@ -29,7 +29,7 @@ F5::
 
 ; F6: - from VSCode switch to Godot and "Run Current Scene (F6)
 ;     - save open .gd file first
-#HotIf WinActive(vscode_window)
+#HotIf WinActive(vscode_window) and WinExist(godot_window)
 F6::
 {
     vscode_save_current_file()
