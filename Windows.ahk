@@ -17,6 +17,9 @@ SetTitleMatchMode("RegEx")
 ; Alt+Space: open Everything to search for and launch executables
 !Space::Run("C:\Program Files\Everything 1.5a\Everything64.exe -filter Executable")
 
+; Win+P: toggle 1Password
+#p::Run("C:\Users\toxe\AppData\Local\1Password\app\8\1Password.exe --toggle")
+
 ; Win+V: Ditto, open clipboard menu
 #v::
 {
