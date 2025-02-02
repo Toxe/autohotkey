@@ -3,10 +3,8 @@
 
 SetTitleMatchMode("RegEx")
 
-; Win+E: switch to existing Explorer window instead of opening a new one
-#HotIf WinExist("ahk_exe explorer\.exe ahk_class CabinetWClass")
-#e::WinActivate
-#HotIf
+; Win+E: open OneCommander file manager instead of Windows Explorer
+#e::Run("C:\Program Files\OneCommander\OneCommander.exe")
 
 ; disable Win+Space, Shift+Win+Space, Ctrl+Shift+Win+Space ("switch keyboard input methods")
   #Space::return
