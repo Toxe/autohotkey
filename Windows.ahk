@@ -14,7 +14,10 @@ SetTitleMatchMode("RegEx")
 ; Win+Pause: enter sleep mode
 #Pause::DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
 
-; Alt+Space: open Everything to search for and launch executables
+; Everything:
+; - Win+F: open Everything and search through everything
+; - Alt+Space: open Everything to search for and launch executables
+#f::Run("C:\Program Files\Everything 1.5a\Everything64.exe -filter Everything")
 !Space::Run("C:\Program Files\Everything 1.5a\Everything64.exe -filter Executable")
 
 ; Win+P: toggle 1Password
