@@ -37,6 +37,16 @@ SetTitleMatchMode("RegEx")
 ; Shift+Win+V: Ditto, paste as plain text
 +#v::Run("C:\Program Files\Ditto\Ditto.exe /PlainTextPaste")
 
+; ==== Monitor & Desktop ==============================================
+
+; Use MultiMonitorTool (https://www.nirsoft.net/utils/multi_monitor_tool.html) to switch desktop resolutions.
+; - Ctrl+Win+1: 1080p
+; - Ctrl+Win+2: 1440p
+; - Ctrl+Win+4: 4K
+^#1::Run("multimonitortool /LoadConfig " . A_AppData . "\MultiMonitorTool\1080p.cfg")
+^#2::Run("multimonitortool /LoadConfig " . A_AppData . "\MultiMonitorTool\1440p.cfg")
+^#4::Run("multimonitortool /LoadConfig " . A_AppData . "\MultiMonitorTool\4K.cfg")
+
 ; ==== Mouse ==========================================================
 
 ; remap Mouse Button 4 to Middle Mouse Button
